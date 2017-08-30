@@ -15,7 +15,7 @@ public class HibernateMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		UserManager userMgr = new UserManager();
-		System.out.println(userMgr.verifyUser("jaya", "pass"));
+		System.out.println("login"+userMgr.verifyUser("kalyan", "pass"));
 	}
 
 }

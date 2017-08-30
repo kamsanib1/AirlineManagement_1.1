@@ -1,5 +1,6 @@
 package com.boot.hibernate.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,7 +18,8 @@ public class Reservations {
 	@ManyToOne
 	@JoinColumn
 	private Schedules schedule;
-	private String classType;
+	//@Column(name="class_type")
+	private String classtype;
 	
 	public int getId() {
 		return id;
@@ -38,10 +40,10 @@ public class Reservations {
 		this.schedule = schedule;
 	}
 	public String getClassType() {
-		return classType;
+		return classtype;
 	}
-	public void setClassType(String classType) {
-		this.classType = classType;
+	public void setClassType(String classtype) {
+		this.classtype = classtype;
 	}
 	
 	
