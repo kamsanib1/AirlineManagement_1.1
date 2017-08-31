@@ -1,5 +1,7 @@
 package com.boot.AirlineManagement.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,11 +25,15 @@ public class UserController {
 	@GetMapping("{name}")
 	public ResponseEntity<Users> getUser(@PathVariable("name") String username) throws JsonProcessingException {
 		Users res = null;
-		ObjectMapper objMapper = new ObjectMapper();
 		res = userService.getUser(username);
 		if(res==null) return null;
-		//String rest = objMapper.writeValueAsString(res);
-		System.out.println("result for "+username+":"+res.getUsername());
+		//System.out.println("result for "+username+":"+res.getUsername());
 		return new ResponseEntity<Users>(res,HttpStatus.OK);
+	}
+	
+	@GetMapping("/all")
+	public ResponseEntity<List<Users>> getAllUsers(){
+		List<Users> users = userService.getAllUsers();
+		return new ResponseEntity<List<Users>>(users,HttpStatus.OK);
 	}
 }

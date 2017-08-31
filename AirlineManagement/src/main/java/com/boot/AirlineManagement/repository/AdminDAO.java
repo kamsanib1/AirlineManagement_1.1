@@ -8,34 +8,35 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
-import com.boot.hibernate.entity.Users;
+import com.boot.hibernate.entity.Admins;
 
 @Transactional
 @Repository
-public class UserDao implements IUserDao {
+public class AdminDAO implements IAdminDAO {
 
 	@PersistenceContext
 	EntityManager entityManager;
-	
+		
+
 	@Override
-	public void addUser(Users user) {
+	public void addAdmin(Admins admin) {
 		// TODO Auto-generated method stub
-		entityManager.persist(user);
+		entityManager.persist(admin);
 	}
 
 	@Override
-	public Users getUser(String username) {
+	public Admins getAdmin(String adminname) {
 		// TODO Auto-generated method stub
-		return entityManager.find(Users.class, username);
+		return entityManager.find(Admins.class, adminname);
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Users> getAllUsers() {
+	public List<Admins> getAllAdmins() {
 		// TODO Auto-generated method stub
-		List<Users> users = (List<Users>)entityManager.createQuery("from Users")
-														.getResultList();
-		return users;
+		List<Admins> admins = (List<Admins>)entityManager.createQuery("from admins")
+															.getResultList();
+		return admins;
 	}
 
 }

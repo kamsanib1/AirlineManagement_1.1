@@ -1,17 +1,17 @@
 package com.boot.AirlineManagement.service;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.boot.AirlineManagement.repository.IUserDao;
 import com.boot.hibernate.entity.Users;
 
-@Transactional
-@Repository
+@Service
 public class UserService implements IUserService {
 
 	@Autowired
@@ -38,6 +38,13 @@ public class UserService implements IUserService {
 		// TODO Auto-generated method stub
 		Users user = userDao.getUser(username);
 		return user;
+	}
+
+	@Override
+	public List<Users> getAllUsers() {
+		// TODO Auto-generated method stub
+		
+		return userDao.getAllUsers();
 	}
 
 }
