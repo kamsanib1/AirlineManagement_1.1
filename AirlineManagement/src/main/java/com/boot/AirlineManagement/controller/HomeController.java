@@ -14,7 +14,7 @@ public class HomeController {
 	 
 	@RequestMapping("/")
 	protected String home() {
-		String txt = "Airline Springboot App:<br/>jaya is a valid user:" + userService.verifyUser("jaya", "pass");
+		String txt = "Airline Springboot App:<br/>jaya is a valid user:" + userService.verify("jaya", "pass");
 		
 		return txt;
 	}

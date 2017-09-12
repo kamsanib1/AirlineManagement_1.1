@@ -1,0 +1,17 @@
+<div class="MenuContainer">
+{{initUser()}}
+<table>
+<tbody>
+<tr class="menu">
+<td ng-click="updateDisplay($index)" ng-repeat="t in tabs">
+<a class="menuItem" ng-style="t.style">{{t.name}}</a>
+</td>
+</tr>
+</tbody>
+</table>
+
+<div ng-repeat="t in tabs" ng-show="t.show">
+<div ng-include="t.url" ></div>
+</div>
+
+ </div>

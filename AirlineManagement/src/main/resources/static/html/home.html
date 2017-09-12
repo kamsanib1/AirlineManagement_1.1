@@ -1,0 +1,12 @@
+<div class="MenuContainer">
+<div class="menu">
+<div ng-click="showuser()"><a class="menuItem" ng-style="userStyle">user</a></div>
+<div ng-click="showadmin()"><a class="menuItem" ng-style="adminStyle">admin</a></div>
+</div>
+<br/>
+<div>
+<div ng-include="'html/user_login.html'" ng-show="user"></div>
+<div ng-include="'html/admin_login.html'" ng-show="!user"></div>
+
+</div>
+</div>

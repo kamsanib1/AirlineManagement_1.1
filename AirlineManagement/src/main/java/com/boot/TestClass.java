@@ -10,7 +10,7 @@ public class TestClass {
     
 
     public TestClass() {
-    	boolean res = userService.verifyUser("jaya", "pass");
+    	boolean res = userService.verify("jaya", "pass");
     	
     	System.out.println("jaya is user:"+res);
     }

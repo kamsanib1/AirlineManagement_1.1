@@ -19,20 +19,20 @@ public class AdminDAO implements IAdminDAO {
 		
 
 	@Override
-	public void addAdmin(Admins admin) {
+	public void add(Admins admin) {
 		// TODO Auto-generated method stub
 		entityManager.persist(admin);
 	}
 
 	@Override
-	public Admins getAdmin(String adminname) {
+	public Admins get(String adminname) {
 		// TODO Auto-generated method stub
 		return entityManager.find(Admins.class, adminname);
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Admins> getAllAdmins() {
+	public List<Admins> getAll() {
 		// TODO Auto-generated method stub
 		List<Admins> admins = (List<Admins>)entityManager.createQuery("from admins")
 															.getResultList();

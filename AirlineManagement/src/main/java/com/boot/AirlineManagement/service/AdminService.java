@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.boot.AirlineManagement.repository.IAdminDAO;
 import com.boot.hibernate.entity.Admins;
-import com.boot.hibernate.entity.Users;
 
 @Service
 public class AdminService implements IAdminService {
@@ -16,21 +15,21 @@ public class AdminService implements IAdminService {
 	IAdminDAO adminDao;
 
 	@Override
-	public void addAdmin(Admins admin) {
+	public void add(Admins admin) {
 		// TODO Auto-generated method stub
-		adminDao.addAdmin(admin);
+		adminDao.add(admin);
 	}
 
 	@Override
-	public Admins getAdmin(String adminname) {
+	public Admins get(String adminname) {
 		// TODO Auto-generated method stub
-		return adminDao.getAdmin(adminname);
+		return adminDao.get(adminname);
 	}
 
 	@Override
-	public List<Admins> getAllAdmins() {
+	public List<Admins> getAll() {
 		// TODO Auto-generated method stub
-		return adminDao.getAllAdmins();
+		return adminDao.getAll();
 	}
 	
 }

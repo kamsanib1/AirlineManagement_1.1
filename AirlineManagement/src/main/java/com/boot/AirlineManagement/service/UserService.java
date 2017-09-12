@@ -2,10 +2,8 @@ package com.boot.AirlineManagement.service;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.boot.AirlineManagement.repository.IUserDao;
@@ -18,15 +16,15 @@ public class UserService implements IUserService {
 	IUserDao userDao;
 	
 	@Override
-	public void addUser(Users user) {
+	public void add(Users user) {
 		// TODO Auto-generated method stub
-		userDao.addUser(user);
+		userDao.add(user);
 	}
 
 	@Override
-	public boolean verifyUser(String username, String password) {
+	public boolean verify(String username, String password) {
 		// TODO Auto-generated method stub
-		Users user = userDao.getUser(username);
+		Users user = userDao.get(username);
 		if(user == null || user.getPassword()!=password)
 		return false;
 		
@@ -34,17 +32,17 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public Users getUser(String username) {
+	public Users get(String username) {
 		// TODO Auto-generated method stub
-		Users user = userDao.getUser(username);
+		Users user = userDao.get(username);
 		return user;
 	}
 
 	@Override
-	public List<Users> getAllUsers() {
+	public List<Users> getAll() {
 		// TODO Auto-generated method stub
 		
-		return userDao.getAllUsers();
+		return userDao.getAll();
 	}
 
 }

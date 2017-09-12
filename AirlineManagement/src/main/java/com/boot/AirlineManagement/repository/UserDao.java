@@ -18,20 +18,20 @@ public class UserDao implements IUserDao {
 	EntityManager entityManager;
 	
 	@Override
-	public void addUser(Users user) {
+	public void add(Users user) {
 		// TODO Auto-generated method stub
 		entityManager.persist(user);
 	}
 
 	@Override
-	public Users getUser(String username) {
+	public Users get(String username) {
 		// TODO Auto-generated method stub
 		return entityManager.find(Users.class, username);
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Users> getAllUsers() {
+	public List<Users> getAll() {
 		// TODO Auto-generated method stub
 		List<Users> users = (List<Users>)entityManager.createQuery("from Users")
 														.getResultList();
